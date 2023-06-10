@@ -1,6 +1,6 @@
 import { Component } from 'inferno';
 import PageTemplate from './PageTemplate';
-import { useLoaderData } from 'inferno-router';
+import { Prompt, useLoaderData } from 'inferno-router';
 
 import './AboutPage.scss';
 import { useLoaderError } from 'inferno-router';
@@ -26,6 +26,7 @@ export default class AboutPage extends Component {
     return (
       <PageTemplate>
         <article>
+          <Prompt when={true} message={'Do you really want to leave?'}></Prompt>
           <h1>{data?.title}</h1>
           <p>{data?.body || err?.message}</p>
         </article>
